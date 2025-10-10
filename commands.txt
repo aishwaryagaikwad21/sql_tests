@@ -1,0 +1,39 @@
+To create/open a db --> sqlite3 test.db 
+
+//Create the table
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    age INTEGER
+);
+
+//to confirm
+.tables --> output = users 
+
+//Insert data
+INSERT INTO users (name, age) VALUES ('Aish', 22);
+INSERT INTO users (name, age) VALUES ('Riya', 25);
+
+//View data
+SELECT * FROM users;
+
+//to exit
+.exit 
+
+//Other useful commands
+    - .help - List all commands 
+    - .tables - Show all tables 
+    - .headers on - Show column names
+    - .mode columns - Pretty output 
+    - .mode box - to have borders
+
+//to know which columns are present
+    PRAGMA table_info(users);
+| cid | name  | type    | notnull | dflt_value | pk |
+| --- | ----- | ------- | ------- | ---------- | -- |
+| 0   | id    | INTEGER | 1       | NULL       | 1  |
+| 1   | name  | TEXT    | 0       | NULL       | 0  |
+| 2   | email | TEXT    | 0       | NULL       | 0  |
+ 
+    name --> list of columns present
+    
