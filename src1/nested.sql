@@ -52,6 +52,8 @@ SELECT "book_id" FROM "authored" WHERE "author_id" = (
     SELECT "id" FROM "authors" WHERE "name" = 'Fernanda Melchor'
 );
 
+--Find titles based on multiple "id" returned by inner query
+--instead of 'equal to = ' (when only 1 id), we will use 'IN' keyword to find from this set of ids
 SELECT "title" FROM "books" WHERE "id" IN (
     SELECT "book_id" FROM "authored" WHERE "author_id" = (
         SELECT "id" FROM "authors" WHERE "name" = 'Fernanda Melchor'
