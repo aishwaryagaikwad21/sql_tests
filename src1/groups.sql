@@ -15,3 +15,15 @@ SELECT "title", ROUND(AVG("rating"), 2) AS "average rating" FROM "ratings"
 JOIN "books" ON "books"."id" = "ratings"."book_id"
 GROUP BY "book_id"
 HAVING "average rating" > 4.0;
+
+--COUNT number of reviews for each book
+SELECT "book_id", COUNT("rating") FROM "ratings"
+GROUP BY "book_id";
+
+--Order/ sort by avg rating
+SELECT "title", ROUND(AVG("rating"), 2) AS "average rating" FROM "ratings"
+JOIN "books" ON "books"."id" = "ratings"."book_id"
+GROUP BY "book_id"
+HAVING "average rating" > 4.0;
+ORDER BY "average rating" DESC;
+

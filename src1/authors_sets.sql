@@ -20,3 +20,5 @@ SELECT "book_id" FROM "translated" WHERE "translator_id" = (
  SELECT "book_id" FROM "translated" WHERE "translator_id" = (
     SELECT "id" FROM "translators" WHERE "name" = 'Margaret Jull Costa'
     );
+
+--NOTES - https://cs50.harvard.edu/sql/notes/1/
