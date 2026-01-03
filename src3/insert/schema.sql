@@ -14,3 +14,13 @@ CREATE TABLE "collections"(
     "acquired" NUMERIC,
     PRIMARY KEY("id")
 );
+
+
+/*
+.import --csv --skip 1 import1.csv collections
+.import --csv import2.csv temp (import2 doesn't have unique id/primary key)
+DELETE FROM "collections" 
+Shift temp data to collections using
+    INSERT INTO "collections" ("title", "accession_number", "acquired")
+    SELECT "title", "accession_number", "acquired" FROM "temp"; --> this will give unique id in collections table by shifting
+*/
