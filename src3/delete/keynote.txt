@@ -1,0 +1,7 @@
+You must explicitly enable foreign keys every time a connection starts:
+    PRAGMA foreign_keys = ON;
+
+to check the status
+    PRAGMA foreign_keys;
+    It must return 1
+    If it returns 0, CASCADE is asleep
